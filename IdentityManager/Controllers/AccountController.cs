@@ -447,8 +447,21 @@ namespace IdentityManager.Controllers
 
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Galeria()
+        {
+            return View();
+        }
 
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Comentario()
+        {
+            return View();
+        }
 
+      
 
         private void AddErrors(IdentityResult result)
         {

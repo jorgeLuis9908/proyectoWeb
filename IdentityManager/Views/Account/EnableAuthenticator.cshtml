@@ -1,28 +1,32 @@
 ﻿@model TwoFactorAuthenticationViewModel
+    <link rel="stylesheet" href="~/css/formulario.css" />
+    <font face="Comic Sans MS,Arial,Verdana" size="4" color="black">
 
-<p>
-    Please enter the code below in your autheticator App.
-</p>
-<p>
-    @Model.Token
-</p>
-<p>
-    Alternatively, scan the below QRCode with your mobile phone.
-</p>
-<div id="qrCode"></div>
+        <h1>AUTENTICACIÓN POR DOS FACTORES.</h1>
+    </font>
+    <p>
+        Ingrese el código a continuación en su aplicación de autenticación.
+    </p>
+    <p>
+        @Model.Token
+    </p>
+    <p>
+        Alternativamente, escanee el código QR a continuación con su teléfono móvil .
+    </p>
+    <div id="qrCode"></div>
 
-<form method="post">
-    <input hidden asp-for="Token" />
-    <div class="form-group">
-        Enter Code : <input type="text" class="form-control" asp-for="Code" />
+    <form method="post">
+        <input hidden asp-for="Token" />
+        <div class="form-group">
+            Enter Code : <input type="text" class="form-control" asp-for="Code" />
 
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
 
-@section Scripts{ 
-<script src="~/js/qrcode.js"></script>
-<script type="text/javascript">
+    @section Scripts{
+        <script src="~/js/qrcode.js"></script>
+        <script type="text/javascript">
     new QRCode(document.getElementById("qrCode"), "@Model.QRCodeUrl");
-</script>
-}
+        </script>
+    }

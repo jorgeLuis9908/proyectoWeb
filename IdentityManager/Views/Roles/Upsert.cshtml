@@ -1,15 +1,15 @@
 ﻿@model Microsoft.AspNetCore.Identity.IdentityRole
 
 @{ 
-    var title = "Create Role";
+    var title = "CREAR UN NUEVO ROL";
 }
 
 <form method="post">
-    @if(Model!=null && !String.IsNullOrEmpty(Model.Id))
+    <link rel="stylesheet" href="/css/tres.css" />
+    @if (Model != null && !String.IsNullOrEmpty(Model.Id))
     {
         title = "Edit Role";
-        <input asp-for="@Model.Id" hidden />
-    }
+<input asp-for="@Model.Id" hidden />}
 
     <div class="border p-3 bg-white">
         <div class="form-group row">
@@ -40,13 +40,11 @@
                             @if (Model != null && !String.IsNullOrEmpty(Model.Id))
                             {
                                 //update
-                                <input type="submit" class="btn btn-info w-100" value="Update" />
-                            }
+                <input type="submit" class="btn btn-info w-100" value="Update" /> }
                             else
                             {
                                 //create
-                                <input type="submit" class="btn btn-primary w-100" value="Create" />
-                            }
+                <input type="submit" class="btn btn-primary w-100" value="Create" />}
                         </div>
                         <div class="col">
                             <a asp-action="Index" class="btn btn-success w-100">Back</a>

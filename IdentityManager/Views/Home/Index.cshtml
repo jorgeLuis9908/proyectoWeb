@@ -1,38 +1,48 @@
 ﻿@inject Microsoft.AspNetCore.Authorization.IAuthorizationService Authoriation
 
-@{
-    ViewData["Title"] = "Home Page";
-}
+@{ ViewData["Title"] = "Home Page"; }
 
-@{
-    var isAdmin = await Authoriation.AuthorizeAsync(User, null, "Admin");
-}
+@{ var isAdmin = await Authoriation.AuthorizeAsync(User, null, "Admin"); }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <link rel="stylesheet" href="/css/estilo.css" />
+    <link rel="stylesheet" href="/css/dos.css" />
+  
+   <font face="Comic Sans MS,Arial,Verdana" size="8" color="black">
+        <h1 class="display-4">BIENVENIDO</h1>
+    </font>
     @if (User.Identity.IsAuthenticated)
     {
         var twofactor = ViewData["TwoFactorEnabled"];
         if (twofactor != null && twofactor.ToString().ToLower() == "true")
         {
-            <a asp-action="RemoveAuthenticator" asp-controller="Account" class="btn btn-warning">Reset & Remove Two Factor Auth</a>
-        }
-        else
-        {
-            <a asp-action="EnableAuthenticator" asp-controller="Account">Setup Two Factor Auth</a>
-        }
-        <br /><br />
+<a asp-action="RemoveAuthenticator" asp-controller="Account" class="btn btn-warning">Reset & Remove Two Factor Auth</a> }
+else
+{
+<a asp-action="EnableAuthenticator" asp-controller="Account">Setup Two Factor Auth</a> }
+<br /><br />
 
-        @if (isAdmin.Succeeded)
-        {
-            <h2>Your role is - Admin</h2>
-        }
-        else
-        {
-            <h2>Your role is - Non Admin</h2>
-        }
-    }
+                @if (isAdmin.Succeeded)
+                {
+<h2>Your role is - Admin</h2> }
+else
+{
+<h2>Your role is - Non Admin</h2>}}
 
 
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+
+    <font face="Comic Sans MS,Arial,Verdana" size="5" color="Purple">
+        <p>Aplicacion Web para el control de usuarios e inventario de la tienda Nanos Thendy  </p>
+        <p class="text-center">
+            Nos da un honor tenerte en nuestra sitio web, nos gustaria que observes nuestra galeria de producto y que nos dejes tu comentario
+            Gracias
+        </p>
+    </font>
 </div>
+
+<video controls autoplay >
+    <source src="~/video/videoplayback.mp4" type="video/mp4" />
+
+</video>
