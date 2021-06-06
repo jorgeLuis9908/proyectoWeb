@@ -17,7 +17,7 @@ namespace IdentityManager.Controllers
             return View();
         }
 
-
+//Controles de Administrador y Usuario
 
         [Authorize]
         //Accessible by logged in users.
