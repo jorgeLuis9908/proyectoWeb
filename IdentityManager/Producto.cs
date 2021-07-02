@@ -11,3 +11,4 @@ namespace IdentityManager
         public const string Error = "Error";
     }
 }
+
